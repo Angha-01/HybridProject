@@ -1,5 +1,7 @@
 package com.PomClass;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -37,7 +39,7 @@ public class registerToBookStorepom extends BaseClass{
 	private WebElement lastele;
   
 	
-	public void registeruser() throws InterruptedException {
+	public elementpagepom registeruser() throws InterruptedException, IOException {
 		UtilityClass.setaction().scrollToElement(lastele).build().perform();
 		
 		UtilityClass.setelement(firstname, "Rahul");
@@ -46,12 +48,14 @@ public class registerToBookStorepom extends BaseClass{
 		UtilityClass.setelement(setpassword, "RahulJain@123");
 		UtilityClass.setaction().scrollToElement(lastele).build().perform();
 		
-		//UtilityClass.setaction().scrollToElement(lastele).build().perform();
+		
 		
 		driver.switchTo().frame(checkboxiframe);
 		checkbox.click();
 		driver.switchTo().defaultContent();
 		registerbutton.click();
+		UtilityClass.takescreenshot("Register_User");
+		return new elementpagepom();
 		
 		
 	}

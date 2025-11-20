@@ -1,5 +1,6 @@
 package com.PomClass;
 
+import java.io.IOException;
 import java.util.Set;
 
 import org.openqa.selenium.WebElement;
@@ -8,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.BaseClass.BaseClass;
+import com.utility.UtilityClass;
 
 public class loginUserpom extends BaseClass {
 	
@@ -47,10 +49,10 @@ public class loginUserpom extends BaseClass {
 		
 		
 		
-		public void scrollpage() {
+		public registerToBookStorepom scrollpage() throws IOException {
 			Actions act=new Actions(driver);
 			act.scrollToElement(lastele).build().perform();
-			//UtilityClass.setaction().scrollToElement(lastele).build().perform();
+			
 			newuserbutton.click();
 			
 			String mainwindow=driver.getWindowHandle();
@@ -62,6 +64,9 @@ public class loginUserpom extends BaseClass {
 				}
 				
 			}
+			UtilityClass.takescreenshot("loginUser");
+			
+			return new registerToBookStorepom();
 			
 		}
 		

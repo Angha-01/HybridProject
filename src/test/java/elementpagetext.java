@@ -12,10 +12,7 @@ public class elementpagetext extends BaseClass {
 	@BeforeClass
 	public void setup() throws InterruptedException, IOException {
 		launchweb();
-		loginUsertest logintest=new  loginUsertest();
-		logintest.loginNewUser();
-		registerToBookStoretest registerbook=new registerToBookStoretest();
-		registerbook.registernewuser();
+		
 		
 		
 	}
@@ -25,7 +22,11 @@ public class elementpagetext extends BaseClass {
 	}
 	
 	@Test
-	public void texteletext() throws IOException {
+	public void texteletext() throws IOException, InterruptedException {
+//		loginUsertest logintest=new  loginUsertest();
+//		logintest.loginNewUser();
+		registerToBookStoretest registerbook=new registerToBookStoretest();
+		registerbook.registernewuser();
 		elementpagepom elepage=new elementpagepom();
 		elepage.textelement();
 		

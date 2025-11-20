@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 
 import com.BaseClass.BaseClass;
 import com.PomClass.loginUserpom;
-import com.utility.UtilityClass;
 
 public class loginUsertest extends BaseClass{
 	@BeforeTest
@@ -16,7 +15,7 @@ public class loginUsertest extends BaseClass{
 	
 	@AfterTest
 	public void teardown() {
-		driver.close();
+		//driver.close();
 	}
 	
 	@Test
@@ -24,8 +23,7 @@ public class loginUsertest extends BaseClass{
 		loginUserpom newuser=new loginUserpom();
 		
 			newuser.scrollpage();
-			UtilityClass.takescreenshot("loginUser");
-		
+			
 		
 	}
 
